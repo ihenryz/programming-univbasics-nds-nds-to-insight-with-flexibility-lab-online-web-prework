@@ -1,6 +1,6 @@
 # Provided, don't edit
 require 'directors_database'
-
+require 'pry'
 # A method we're giving you. This "flattens"  Arrays of Arrays so: [[1,2],
 # [3,4,5], [6]] => [1,2,3,4,5,6].
 
@@ -34,6 +34,9 @@ end
 # Your code after this point
 
 def movies_with_director_key(name, movies_collection)
+  #binding.pry
+  movies_collection.each do |movie_hash|
+    movie_hash[:director_name] = name
   # GOAL: For each Hash in an Array (movies_collection), provide a collection
   # of movies and a directors name to the movie_with_director_name method
   # and accumulate the returned Array of movies into a new Array that's
@@ -49,6 +52,7 @@ def movies_with_director_key(name, movies_collection)
   # :director_name key. This addition can be done by using the provided
   # movie_with_director_name method
 end
+
 
 
 def gross_per_studio(collection)
